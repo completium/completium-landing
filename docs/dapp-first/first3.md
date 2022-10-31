@@ -22,8 +22,8 @@ completium-cli show contract ownership
 **Copy-paste** the contract address line 9 of `~/src/settings.js`, like for example:
 ```js {4}
 const [settings,setState] = useState({
-    network  : 'granadanet',
-    endpoint : 'https://testnet-tezos.giganode.io',
+    network  : 'ghostnet',
+    endpoint : 'https://ghostnet.ecadinfra.com',
     contract : 'KT1BAVw4WhU7BAs2jiakDv4VrR9CNzQK32rd',
     show     : false,
 });
@@ -96,7 +96,7 @@ The code below synthesizes the sections above.
 
 with the code below (click 'copy' in the upper-right-hand corner):
 
-```js
+```jsx
 const Cell = (props) => {
   return (<Grid item xs={6}><Typography align="left" variant="subtitle2"
     style={ props.data ? { fontFamily: courier } : { } }> { props.val }
@@ -143,7 +143,7 @@ Now **replace** in `~/src/App.js` the code between the comments:
 
 with the code below (click 'copy' in the upper-right-hand corner):
 
-```html
+```jsx
 <Grid item xs={12}>
   <OwnershipData />
 </Grid>
@@ -165,7 +165,7 @@ This section is for information only, no action is required.
 
 This section presents the code of `~/src/App.js` at the end of this step:
 
-```js {26-59,85-87}
+```jsx {26-59,85-87}
 import './App.css';
 import React from 'react';
 import useMediaQuery from '@material-ui/core/useMediaQuery';

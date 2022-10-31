@@ -12,13 +12,13 @@ The goal is to add a *Post Bid* button to call the contract.
 
 **Replace** in `~/src/App.js` the comment below:
 
-```js
+```jsx
 /* FIXME: Step 4.1 */
 ```
 
 with the code below (click 'copy' in the upper-right-hand corner):
 
-```js {8-9,12}
+```jsx {8-9,12}
 const BidButton = () => {
   const tezos = useTezos();
   const account = useAccountPkh();
@@ -54,13 +54,13 @@ Note that 10 tezies are sent to the contract with the `send` argument `{ amount:
 
 Now **replace** in `~/src/App.js` the comment below:
 
-```js
+```jsx
 { /* FIXME: Step 4.2 */ }
 ```
 
 with the code below (click 'copy' in the upper-right-hand corner):
 
-```html
+```jsx
 <Grid item xs={12}>
   <BidButton />
 </Grid>
@@ -74,13 +74,13 @@ The project provides a utility button `WalletButton` to connect to the wallet. I
 
 **Replace** in `~/src/App.js` the comment below:
 
-```js
+```jsx
 { /* FIXME: Step 4.3 */ }
 ```
 
 with the code below (click 'copy' in the upper-right-hand corner):
 
-```html
+```jsx
 <Grid item xs={12}>
   <WalletButton />
 </Grid>
@@ -104,7 +104,7 @@ This section is for information only, no action is required.
 
 This section presents the code of `~/src/App.js` at the end of this step:
 
-```js {62-83,111-113,117-119}
+```jsx {62-83,111-113,117-119}
 import './App.css';
 import React from 'react';
 import useMediaQuery from '@material-ui/core/useMediaQuery';

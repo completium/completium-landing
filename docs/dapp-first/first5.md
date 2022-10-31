@@ -69,7 +69,7 @@ Say the owner requires a minimum price of 7 tezies.
 **Enter** the following <Link to='/docs/cli'>Completium CLI</Link> command to invoke the entrypoint `upforsale`:
 
 ```bash
-completium-cli call ownership --as owner --entry upforsale --arg '{ "price" : "7tz" }'
+completium-cli call ownership --entry upforsale --arg '{ "price" : "7tz" }'
 ```
 
 Check and confirm the transaction parameter: type 'Y' and press enter.
@@ -124,7 +124,7 @@ entry bid() {
 The solution is to set back the contract state to `Owned` by calling the `claim` from `admin` account. This is done with the following command:
 
 ```
-completium-cli call ownership --entry claim --as owner
+completium-cli call ownership --entry claim
 ```
 
 Once confirmed, you may proceed to <Link to='/docs/dapp-first/make-bid#set-asset-up-for-sale'>Set asset up for sale</Link> step above.

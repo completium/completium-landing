@@ -9,12 +9,29 @@ import Link from '@docusaurus/Link';
 
 The first step is to originate (deploy) the ownership <Link to='/docs/dapp-tools/tezos#smart-contract'>Smart Contract</Link> with <Link to='/docs/cli'>completium CLI</Link>.
 
-Before anything, follow these <Link to='/docs/dapp-tools/faucet#create-a-test-account'>instructions</Link> to import a new test account:
-* copy paste (or upload to gitpod) in `faucet.json` file a test account retrieved from <Link to='https://teztnets.xyz/ithacanet-faucet'>teztnets.xyz</Link>
-* in order to import the faucet account with `completium-cli`, enter the following command in a VS code <Link to='/docs/dapp-tools/gitpod#open-terminal'>Terminal</Link> tab:
+Before anything, create a new account and provide it with some ghostnet tez:
+1. create an account with the following `completium-cli`command in a VS code <Link to='/docs/dapp-tools/gitpod#open-terminal'>Terminal</Link> tab:
 
 ```
-completium-cli import faucet faucet.json as owner
+completium-cli generate account as first-dapp-account
+```
+where `first-dapp-account` is the logical name of the account; you may give it another name.
+
+2. the above command generates a `tz1...` address; copy this address and go to [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/); provide the account with ghostnet by setting the `tz1...` address in the "Or fund any address" section.
+
+3. set default endpoint with:
+```
+completium-cli set endpoint https://ghostnet.ecadinfra.com
+```
+
+4. set the default account to `first-dapp-account`:
+```
+completium-cli set account first-dapp-account
+```
+
+5. check that balance is strictly positive with:
+```
+completium-cli show account first-dapp-account
 ```
 
 ## Smart contract code
@@ -34,7 +51,7 @@ variable assetid : bytes =
 variable bestbidder : address = owner
 variable bestbid    : tez = 0tz
 
-variable endofbid   : date = now
+variable endofbid : option<date> = none
 
 states =
 | Owned initial
@@ -45,28 +62,28 @@ transition upforsale (price : tez) {
    from Owned to ForSale
    with effect {
       bestbid := price;
-      endofbid := now + 5m;
+      endofbid := some((now + 5m));
    }
 }
 
 entry bid() {
+   state is ForSale otherwise "Asset Not For Sale"
    require {
-      r1: state = ForSale       otherwise "Asset Not For Sale";
-      r2: now < endofbid        otherwise "Bid Period Is Over";
-      r3: caller <> bestbidder  otherwise "Called By Best Bidder";
-      r4: transferred > bestbid otherwise "Invalid Transferred Amount";
+      r1: endofbid ? now < the : false otherwise "Bid Period Is Over";
+      r2: caller <> bestbidder         otherwise "Called By Best Bidder";
+      r3: transferred > bestbid        otherwise "Invalid Transferred Amount";
    }
    effect {
      if balance <> transferred then
        transfer bestbid to bestbidder;
      bestbidder := caller;
      bestbid := transferred;
-     endofbid := now + 2m;
+     endofbid := some((now + 2m));
    }
 }
 
 transition claim () {
-  require { r5: now > endofbid otherwise "Bid Period Is Still On" }
+  require { r5: endofbid ? now > the : false otherwise "Bid Period Is Still On" }
   from ForSale to Owned
   with effect {
      if balance > 0tz then
@@ -82,11 +99,11 @@ transition claim () {
 Enter this command in the <Link to='/docs/dapp-tools/gitpod#open-terminal'>Terminal</Link>:
 
 ```bash
-completium-cli deploy ./contract/ownership.arl --as owner --parameters '{ "owner" : "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" }'
+completium-cli deploy ./contract/ownership.arl --parameters '{ "owner" : "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" }'
 ```
 
 :::warning
-Replace address `tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P` by the faucet address you imported
+Replace address `tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P` by the `first-dapp-account` account you generated
 (run `completium-cli show account` to display the address - Public Key hash).
 :::
 
@@ -94,17 +111,17 @@ It displays the main origination parameters and asks for confirmation. Enter `Y`
 
 The output should look like:
 ```bash
-$ completium-cli deploy ./contract/ownership.arl --as owner --parameters '{ "owner" : "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" }' --force
+$ completium-cli deploy ./contract/ownership.arl --parameters '{ "owner" : "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" }' --force
 Originate settings:
-  network	: granada
+  network	  : ghostnet
   contract	: ownership
-  as	    : admin
-  send		: 0 ꜩ
-  storage	: (Pair "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" (Pair 0x68746ecbcd72793aefda48f1b67a3190fc380a7633055d2336fb90cd990582a2 (Pair "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" (Pair 0 (Pair 1635064614 0)))))
+  as	      : first-dapp-account
+  send		  : 0 ꜩ
+  storage	  : (Pair "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" (Pair 0x68746ecbcd72793aefda48f1b67a3190fc380a7633055d2336fb90cd990582a2 (Pair "tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P" (Pair 0 (Pair 1635064614 0)))))
   total cost	: 0.42918 ꜩ
 Waiting for confirmation of origination for KT1PPMXvCQh2g3b4YP4ovha5ZwpbKhh5xNh5 ...
 Origination completed for KT1PPMXvCQh2g3b4YP4ovha5ZwpbKhh5xNh5 named ownership.
-https://better-call.dev/granadanet/KT1PPMXvCQh2g3b4YP4ovha5ZwpbKhh5xNh5
+https://better-call.dev/ghostnet/KT1PPMXvCQh2g3b4YP4ovha5ZwpbKhh5xNh5
 ```
 
 Click on the generated link to display the contract in <Link to='/docs/dapp-tools/bcd'>Better Call Dev</Link> indexer (it may take up to a dozen of seconds for BCD to synchronize with the blockchain). It shows the origination cost of 0.39ꜩ.
@@ -118,7 +135,7 @@ completium-cli originate ./contract/ownership.tz --init '(Pair "tz1h4CiqWxNe4UxS
 ```
 
 :::warning
-Replace *twice* address `tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P` by the faucet address you imported
+Replace *twice* address `tz1h4CiqWxNe4UxSpkwXy617RM6DaK6NU76P` by the `first-dapp-account` account you generated
 (run `completium-cli show account` to display the address - Public Key hash).
 :::
 ## Contract API
@@ -144,7 +161,7 @@ It stores 4 extra variables used to implement the transfer of ownership process:
 | -- | :-- | -- | -- |
 | `bestbidder` | address | Address of the best bidder; it is equal to the owner address when asset is not for sale. | `owner` |
 | `bestbid` | tez | Best bid amount. | `0tz` |
-| `endofbid` | date | Date of the end of bid. | `now` (date of origination) |
+| `endofbid` | option of date | Date of the end of bid. | `none` |
 | `_state` | int | Value is either 0 (not for sale) or 1 (for sale). | `0` (not for sale) |
 
 ### Entrypoints
