@@ -1,0 +1,19 @@
+{
+  "header": {
+    "features": "Features",
+    "solution": "Solution",
+    "pricing": "Pricing",
+    "about": "About",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "heroSection": {
+    "title": "Accelerate your AI performance",
+    "titleStart": "Accelerate your ",
+    "aiWord": "AI",
+    "titleEnd": " performance",
+    "description": " is the catalyst element for your AI strategy, from strategic consulting to AI solutions production. From prompt to product.",
+    "cta": "Let's talk",
+    "powering": "Powering the best teams"
+  }
+} 
