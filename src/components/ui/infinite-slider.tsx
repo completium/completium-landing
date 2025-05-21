@@ -9,6 +9,7 @@ export type InfiniteSliderProps = {
   gap?: number;
   speed?: number;
   speedOnHover?: number;
+  pauseOnHover?: boolean;
   direction?: 'horizontal' | 'vertical';
   reverse?: boolean;
   className?: string;
@@ -19,17 +20,21 @@ export function InfiniteSlider({
   gap = 16,
   speed = 100,
   speedOnHover,
+  pauseOnHover = false,
   direction = 'horizontal',
   reverse = false,
   className,
 }: InfiniteSliderProps) {
   const [currentSpeed, setCurrentSpeed] = useState(speed);
+  const [isPaused, setIsPaused] = useState(false);
   const [ref, { width, height }] = useMeasure();
   const translation = useMotionValue(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [key, setKey] = useState(0);
 
   useEffect(() => {
+    if (isPaused) return;
+    
     let controls;
     const size = direction === 'horizontal' ? width : height;
     const contentSize = size + gap;
@@ -75,9 +80,20 @@ export function InfiniteSlider({
     isTransitioning,
     direction,
     reverse,
+    isPaused,
   ]);
 
-  const hoverProps = speedOnHover
+  const hoverProps = pauseOnHover
+    ? {
+        onHoverStart: () => {
+          setIsPaused(true);
+        },
+        onHoverEnd: () => {
+          setIsPaused(false);
+          setKey((prevKey) => prevKey + 1);
+        },
+      }
+    : speedOnHover
     ? {
         onHoverStart: () => {
           setIsTransitioning(true);

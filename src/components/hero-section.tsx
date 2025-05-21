@@ -51,6 +51,9 @@ export default function HeroSection() {
                                 height="4000"
                                 width="3000"
                             />
+                            <p className="hidden lg:block ml-auto w-2/3 text-right mt-2 font-mono text-sm tracking-wider text-muted-foreground lg:absolute lg:right-[190px] lg:mt-0 lg:w-2/3 lg:text-right lg:top-[480px]">
+                                {t('heroSection.crystalCaption')}
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -62,42 +65,45 @@ export default function HeroSection() {
                             </div>
                             <div className="relative py-6 md:w-[calc(100%-11rem)]">
                                 <InfiniteSlider
+                                    pauseOnHover={false}
                                     speedOnHover={20}
                                     speed={40}
                                     gap={112}>
+                                    {/* Modèles & Frameworks */}
                                     <div className="flex">
                                         <img
                                             className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                            alt="Nvidia Logo"
+                                            src="/pytorch-2.svg"
+                                            alt="PyTorch Logo"
+                                            height="20"
+                                            width="auto"
+                                        />
+                                    </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-5 w-fit dark:invert"
+                                            src="/TensorFlow_Logo.svg"
+                                            alt="TensorFlow Logo"
+                                            height="20"
+                                            width="auto"
+                                        />
+                                    </div>
+                                    <div className="flex">
+                                        <img
+                                            className="mx-auto h-5 w-fit dark:invert"
+                                            src="/Hugging_Face_logo.svg"
+                                            alt="Hugging Face Logo"
                                             height="20"
                                             width="auto"
                                         />
                                     </div>
 
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/column.svg"
-                                            alt="Column Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/github.svg"
-                                            alt="GitHub Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
+                                    {/* RAG & LLM apps */}
                                     <div className="flex">
                                         <img
                                             className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/nike.svg"
-                                            alt="Nike Logo"
+                                            src="/langchain-logo-brandlogos.net_dexzv4edm.svg"
+                                            alt="LangChain Logo"
                                             height="20"
                                             width="auto"
                                         />
@@ -105,40 +111,44 @@ export default function HeroSection() {
                                     <div className="flex">
                                         <img
                                             className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                            alt="Lemon Squeezy Logo"
+                                            src="/N8n-logo-new.svg"
+                                            alt="N8n Logo"
                                             height="20"
                                             width="auto"
                                         />
                                     </div>
                                     <div className="flex">
                                         <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                            alt="Laravel Logo"
-                                            height="16"
+                                            className="mx-auto h-5 w-fit dark:invert"
+                                            src="https://dbdb.io/media/logos/weaviate2023.svg"
+                                            alt="Weaviate Logo"
+                                            height="20"
                                             width="auto"
                                         />
                                     </div>
                                     <div className="flex">
                                         <img
-                                            className="mx-auto h-7 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                            alt="Lilly Logo"
-                                            height="28"
+                                            className="mx-auto h-5 w-fit dark:invert"
+                                            src="https://raw.githubusercontent.com/qdrant/qdrant/master/docs/logo.svg"
+                                            alt="Qdrant Logo"
+                                            height="20"
                                             width="auto"
                                         />
                                     </div>
 
+                                    {/* Fine-tuning & Hosting */}
+                                    
                                     <div className="flex">
                                         <img
-                                            className="mx-auto h-6 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/openai.svg"
-                                            alt="OpenAI Logo"
-                                            height="24"
+                                            className="mx-auto h-5 w-fit dark:invert"
+                                            src="/replicate-brand.svg"
+                                            alt="Replicate Logo"
+                                            height="20"
                                             width="auto"
                                         />
                                     </div>
+
+                                    
                                 </InfiniteSlider>
 
                                 <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>

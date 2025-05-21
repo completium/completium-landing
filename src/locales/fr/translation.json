@@ -14,6 +14,32 @@
     "titleEnd": "",
     "description": " est l'élément catalyseur de votre stratégie IA, du conseil stratégique à la mise en production de solutions IA. Du prompt au produit.",
     "cta": "Parlons de votre projet",
-    "powering": "Propulsant les meilleures équipes"
+    "powering": "Intégrez le meilleur de la technologie IA",
+    "crystalCaption": "Cristal de Completium"
+  },
+  "contentSection": {
+    "title": "Ravis de vous rencontrer.",
+    "and": "et",
+    "founderText1": "ont créé",
+    "founderText2": "en 2013 par passion pour le partage et l'enseignement des sciences et de la technologie.",
+    "blockchainText1": "En 2018, ils se sont passionnés pour la technologie blockchain et en 2019 ont commencé à développer le",
+    "blockchainText2": "avec le soutien de la Fondation Tezos.",
+    "completiumText": "En 2025, revenant à leurs racines dans les systèmes CRM optimisés par l'IA, ils ont fondé",
+    "completiumText2": "pour aider les entreprises à créer leurs applications d'IA.",
+    "edukera": "edukera",
+    "archetypeLanguage": "langage Archetype",
+    "completium": "Completium"
+  },
+  "footer": {
+    "features": "Fonctionnalités",
+    "solution": "Solution",
+    "customers": "Clients",
+    "pricing": "Tarifs",
+    "help": "Aide",
+    "about": "À propos",
+    "ariaTwitter": "X/Twitter",
+    "ariaLinkedin": "LinkedIn",
+    "ariaTelegram": "Telegram",
+    "copyright": "Tous droits réservés"
   }
 } 

@@ -14,6 +14,32 @@
     "titleEnd": " performance",
     "description": " is the catalyst element for your AI strategy, from strategic consulting to AI solutions production. From prompt to product.",
     "cta": "Let's talk",
-    "powering": "Powering the best teams"
+    "powering": "Integrate the best of AI technology",
+    "crystalCaption": "Completium Crystal"
+  },
+  "contentSection": {
+    "title": "Nice to meet you.",
+    "and": "and",
+    "founderText1": "created",
+    "founderText2": "in 2013 for the passion of sharing and teaching science and technology.",
+    "blockchainText1": "In 2018 they became enthusiastic for the blockchain technology and in 2019 started to develop the",
+    "blockchainText2": "with the support of the Tezos Foundation.",
+    "completiumText": "In 2025, returning to their roots in AI-optimized CRM systems, they founded",
+    "completiumText2": "to help companies build their AI applications.",
+    "edukera": "edukera",
+    "archetypeLanguage": "Archetype language",
+    "completium": "Completium"
+  },
+  "footer": {
+    "features": "Features",
+    "solution": "Solution",
+    "customers": "Customers",
+    "pricing": "Pricing",
+    "help": "Help",
+    "about": "About",
+    "ariaTwitter": "X/Twitter",
+    "ariaLinkedin": "LinkedIn",
+    "ariaTelegram": "Telegram",
+    "copyright": "All rights reserved"
   }
 } 
