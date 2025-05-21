@@ -1,5 +1,4 @@
 import { createRouter, createRootRoute, createRoute } from '@tanstack/react-router'
-import React from 'react'
 import App from '../App'
 
 // Créez la route racine

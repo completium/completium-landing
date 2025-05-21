@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from '@tanstack/react-router'
 import { HeroHeader } from './header'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'

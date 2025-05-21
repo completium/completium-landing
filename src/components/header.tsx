@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { Logo } from '@/components/logo'
 import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from './language-switcher'
