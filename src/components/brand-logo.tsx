@@ -17,6 +17,7 @@ export interface BrandLogoProps {
   brand: Brand;
   height?: number | string;
   className?: string;
+  url?: string; // URL à ouvrir lorsque le logo est cliqué
 }
 
 // Fonction pour obtenir le nom du fichier SVG en fonction de la marque et du thème
@@ -45,7 +46,7 @@ function getLogoPath(brand: Brand, isDark: boolean): string {
   }
 }
 
-export function BrandLogo({ brand, height = 20, className = "" }: BrandLogoProps) {
+export function BrandLogo({ brand, height = 20, className = "", url }: BrandLogoProps) {
   const { theme } = useTheme();
   
   // Déterminer si le thème est sombre
@@ -60,16 +61,21 @@ export function BrandLogo({ brand, height = 20, className = "" }: BrandLogoProps
     maxHeight: typeof height === 'number' ? `${height}px` : height,
   };
   
+  // Conteneur du logo, potentiellement cliquable
+  const LogoContainer = url ? 'a' : 'div';
+  const linkProps = url ? { href: url, target: "_blank", rel: "noopener noreferrer" } : {};
+  
   return (
-    <div 
+    <LogoContainer 
       style={sizeStyle} 
       className={`inline-flex items-center justify-center w-full ${className}`}
+      {...linkProps}
     >
       <img
         src={logoPath}
         alt={`${brand} Logo`}
         className={`h-full w-auto mx-auto`}
       />
-    </div>
+    </LogoContainer>
   );
 } 

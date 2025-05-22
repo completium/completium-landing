@@ -76,6 +76,7 @@ export default function HeroSection() {
                                             brand="pytorch"
                                             height={40}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://pytorch.org/"
                                         />
                                     </div>
                                     <div className="flex">
@@ -83,6 +84,7 @@ export default function HeroSection() {
                                             brand="tensorflow"
                                             height={20}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://www.tensorflow.org"
                                         />
                                     </div>
                                     <div className="flex">
@@ -90,6 +92,7 @@ export default function HeroSection() {
                                             brand="hugging-face"
                                             height={35}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://huggingface.co/"
                                         />
                                     </div>
 
@@ -99,6 +102,7 @@ export default function HeroSection() {
                                             brand="langchain"
                                             height={20}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://www.langchain.com/"
                                         />
                                     </div>
                                     <div className="flex">
@@ -106,6 +110,7 @@ export default function HeroSection() {
                                             brand="n8n"
                                             height={40}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://n8n.io/"
                                         />
                                     </div>
                                     <div className="flex">
@@ -113,6 +118,7 @@ export default function HeroSection() {
                                             brand="weaviate"
                                             height={20}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://weaviate.io/"
                                         />
                                     </div>
                                     <div className="flex">
@@ -120,6 +126,7 @@ export default function HeroSection() {
                                             brand="qdrant"
                                             height={25}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://qdrant.tech/"
                                         />
                                     </div>
 
@@ -130,6 +137,7 @@ export default function HeroSection() {
                                             brand="replicate"
                                             height={20}
                                             className="mx-auto h-5 w-fit"
+                                            url="https://replicate.com/"
                                         />
                                     </div>
 

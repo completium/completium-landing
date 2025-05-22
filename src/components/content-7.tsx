@@ -15,10 +15,14 @@ export default function ContentSection() {
                             <a href="https://www.linkedin.com/in/benoitrognier/" target="_blank" rel="noopener noreferrer">Benoit</a>
                         </Button> {t('contentSection.and')} <Button variant="link" className="p-0 font-normal h-auto" asChild>
                             <a href="https://www.linkedin.com/in/guillaumeduhamel/" target="_blank" rel="noopener noreferrer">Guillaume</a>
-                        </Button> {t('contentSection.founderText1')} <span className="font-bold text-foreground">{t('contentSection.edukera')}</span> {t('contentSection.founderText2')}
+                        </Button> {t('contentSection.founderText1')} <Button variant="link" className="p-0 font-bold h-auto" asChild>
+                            <a href="https://edukera.com/" target="_blank" rel="noopener noreferrer">{t('contentSection.edukera')}</a>
+                        </Button> {t('contentSection.founderText2')}
                         </p>
                         <p className="text-muted-foreground">
-                        {t('contentSection.blockchainText1')} <span className="font-bold text-foreground">{t('contentSection.archetypeLanguage')}</span> {t('contentSection.blockchainText2')}
+                        {t('contentSection.blockchainText1')} <Button variant="link" className="p-0 font-bold h-auto" asChild>
+                            <a href="https://archetype-lang.org/" target="_blank" rel="noopener noreferrer">{t('contentSection.archetypeLanguage')}</a>
+                        </Button> {t('contentSection.blockchainText2')}
                         </p>
                         <p className="text-muted-foreground">{t('contentSection.completiumText')} <span className="font-bold text-foreground">{t('contentSection.completium')}</span> {t('contentSection.completiumText2')}</p>
                         
