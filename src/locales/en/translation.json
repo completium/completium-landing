@@ -17,6 +17,27 @@
     "powering": "Integrate the best of AI technology",
     "crystalCaption": "Completium Crystal"
   },
+  "featuresSection": {
+    "title": "Made to cover your needs",
+    "description": "From AI consulting to full-stack development, we deliver robust, ready-to-integrate solutions tailored to your business.",
+    "ai": {
+      "title": "AI",
+      "description": "We integrate AI into your business processes by developing <b>AI agents</b> or <b>agentic AI</b>, capable of autonomous task orchestration. Agents can run on your internal GPU infrastructure or be cloud-hosted, with full respect for <b>data privacy</b>."
+    },
+    "vibeCoding": {
+      "title": "Vibe coding",
+      "howWeDoIt": "How we do it:",
+      "items": [
+        "Quick, transparent and reproducible development",
+        "All prompts delivered",
+        "Full PRD documentation, ready for internal handover"
+      ]
+    },
+    "techStack": {
+      "title": "Tech stack",
+      "description": "We build both intuitive UIs and robust backends. Our default stack (not exclusively though) is full TypeScript, from backend APIs (Node, NestJS) to frontend apps (React, Angular, Next.js). Whatever your needs, we deliver production-grade systems — fast and secure."
+    }
+  },
   "contentSection": {
     "title": "Nice to meet you.",
     "and": "and",

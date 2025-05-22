@@ -1,50 +1,20 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Settings2, Sparkles, Zap } from 'lucide-react'
+import { Layers, Settings2, Sparkles, Waves, Zap } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Features() {
+    const { t } = useTranslation()
+    const vibeItems = t('featuresSection.vibeCoding.items', { returnObjects: true }) as string[]
+    
     return (
-        <section className="py-16 md:py-32">
+        <section id="solution" className="py-16 md:py-32">
             <div className="@container mx-auto max-w-5xl px-6">
                 <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Built to cover your needs</h2>
-                    <p className="mt-4">Libero sapiente aliquam quibusdam aspernatur, praesentium iusto repellendus.</p>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">{t('featuresSection.title')}</h2>
+                    <p className="mt-4">{t('featuresSection.description')}</p>
                 </div>
                 <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-6 [--color-background:var(--color-muted)] [--color-card:var(--color-muted)] *:text-center md:mt-16 dark:[--color-muted:var(--color-zinc-900)]">
-                    <Card className="group border-0 shadow-none bg-transparent">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Zap
-                                    className="size-6"
-                                    aria-hidden
-                                />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium">Customizable</h3>
-                        </CardHeader>
-
-                        <CardContent>
-                            <p className="text-sm">Extensive customization options, allowing you to tailor every aspect to meet your specific needs.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border-0 shadow-none bg-transparent">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Settings2
-                                    className="size-6"
-                                    aria-hidden
-                                />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium">You have full control</h3>
-                        </CardHeader>
-
-                        <CardContent>
-                            <p className="mt-3 text-sm">From design elements to functionality, you have complete control to create a unique and personalized experience.</p>
-                        </CardContent>
-                    </Card>
-
                     <Card className="group border-0 shadow-none bg-transparent">
                         <CardHeader className="pb-3">
                             <CardDecorator>
@@ -54,11 +24,50 @@ export default function Features() {
                                 />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">Powered By AI</h3>
+                            <h3 className="mt-6 font-medium">{t('featuresSection.ai.title')}</h3>
                         </CardHeader>
 
                         <CardContent>
-                            <p className="mt-3 text-sm">Elements to functionality, you have complete control to create a unique experience.</p>
+                            <p className="text-sm" dangerouslySetInnerHTML={{ __html: t('featuresSection.ai.description') }}></p>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="group border-0 shadow-none bg-transparent">
+                        <CardHeader className="pb-3">
+                            <CardDecorator>
+                                <Waves
+                                    className="size-6"
+                                    aria-hidden
+                                />
+                            </CardDecorator>
+
+                            <h3 className="mt-6 font-medium">{t('featuresSection.vibeCoding.title')}</h3>
+                        </CardHeader>
+
+                        <CardContent>
+                            <p className="mt-3 text-sm font-medium">{t('featuresSection.vibeCoding.howWeDoIt')}</p>
+                            <ul className="mt-2 text-sm list-disc pl-5 text-left">
+                                {vibeItems.map((item, index) => (
+                                    <li key={index}>{item}</li>
+                                ))}
+                            </ul>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="group border-0 shadow-none bg-transparent">
+                        <CardHeader className="pb-3">
+                            <CardDecorator>
+                                <Layers
+                                    className="size-6"
+                                    aria-hidden
+                                />
+                            </CardDecorator>
+
+                            <h3 className="mt-6 font-medium">{t('featuresSection.techStack.title')}</h3>
+                        </CardHeader>
+
+                        <CardContent>
+                            <p className="mt-3 text-sm">{t('featuresSection.techStack.description')}</p>
                         </CardContent>
                     </Card>
                 </div>

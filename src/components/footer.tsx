@@ -1,34 +1,61 @@
 import { Logo } from './logo'
 import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
 
 export default function FooterSection() {
     const { t } = useTranslation()
 
+    useEffect(() => {
+        // Fonction pour gérer le défilement fluide vers les ancres
+        const handleSmoothScroll = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('/#')) {
+                e.preventDefault();
+                const id = target.getAttribute('href')?.replace('/#', '');
+                const element = document.getElementById(id || '');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        };
+
+        const links = document.querySelectorAll('a[href^="/#"]');
+        links.forEach(link => {
+            link.addEventListener('click', handleSmoothScroll as EventListener);
+        });
+
+        return () => {
+            links.forEach(link => {
+                link.removeEventListener('click', handleSmoothScroll as EventListener);
+            });
+        };
+    }, []);
+
     const links = [
-        {
-            title: t('footer.features'),
-            href: '#',
-        },
+        //{
+        //    title: t('footer.features'),
+        //    href: '/',
+        //},
         {
             title: t('footer.solution'),
-            href: '#',
-        },
-        {
-            title: t('footer.customers'),
-            href: '#',
-        },
-        {
-            title: t('footer.pricing'),
-            href: '#',
-        },
-        {
-            title: t('footer.help'),
-            href: '#',
+            href: '/#solution',
         },
         {
             title: t('footer.about'),
-            href: '#',
+            href: '/#equipe',
         },
+        //{
+        //    title: t('footer.customers'),
+        //    href: '#',
+        //},
+        //{
+        //    title: t('footer.pricing'),
+        //    href: '#',
+        //},
+        //{
+        //    title: t('footer.help'),
+        //    href: '#',
+        //},
     ]
 
     return (

@@ -1,21 +1,51 @@
 import { Link } from '@tanstack/react-router'
 import { Logo } from '@/components/logo'
 import { Menu, X } from 'lucide-react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from './language-switcher'
 import { ThemeSwitcher } from '@/components/ui/kibo-ui/theme-switcher'
 
 const menuItems = [
-    { name: 'header.features', href: '/' },
-    { name: 'header.solution', href: '/' },
-    { name: 'header.pricing', href: '/' },
-    { name: 'header.about', href: '/' },
+    //{ name: 'header.features', href: '/' },
+    { name: 'header.solution', href: '/#solution' },
+    { name: 'header.about', href: '/#equipe' },
 ]
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
     const { t } = useTranslation()
+    
+    useEffect(() => {
+        // Fonction pour gérer le défilement fluide vers les ancres
+        const handleSmoothScroll = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            const link = target.closest('a');
+            if (link && link.getAttribute('href')?.startsWith('/#')) {
+                e.preventDefault();
+                const id = link.getAttribute('href')?.replace('/#', '');
+                const element = document.getElementById(id || '');
+                if (element) {
+                    setMenuState(false); // Fermer le menu mobile si ouvert
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        };
+
+        const handleMenuItemClick = (e: Event) => {
+            handleSmoothScroll(e as MouseEvent);
+        };
+
+        document.querySelectorAll('nav a[href^="/#"]').forEach(link => {
+            link.addEventListener('click', handleMenuItemClick);
+        });
+
+        return () => {
+            document.querySelectorAll('nav a[href^="/#"]').forEach(link => {
+                link.removeEventListener('click', handleMenuItemClick);
+            });
+        };
+    }, [setMenuState]);
     
     return (
         <header>

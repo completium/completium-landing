@@ -17,6 +17,27 @@
     "powering": "Intégrez le meilleur de la technologie IA",
     "crystalCaption": "Cristal de Completium"
   },
+  "featuresSection": {
+    "title": "Conçu pour répondre à vos besoins",
+    "description": "Du conseil en IA au développement full-stack, nous livrons des solutions robustes et prêtes à intégrer, adaptées à votre entreprise.",
+    "ai": {
+      "title": "IA",
+      "description": "Nous intégrons l'IA dans vos processus métier en développant des <b>agents IA</b> ou de l'<b>IA agentique</b>, capable d'orchestrer des tâches de façon autonome. Les agents peuvent fonctionner sur votre infrastructure GPU interne ou être hébergés dans le cloud, avec un respect total de la <b>confidentialité des données</b>."
+    },
+    "vibeCoding": {
+      "title": "Vibe coding",
+      "howWeDoIt": "Comment nous procédons :",
+      "items": [
+        "Développement rapide, transparent et reproductible",
+        "Tous les prompts livrés",
+        "Documentation PRD complète, prête pour le transfert interne"
+      ]
+    },
+    "techStack": {
+      "title": "Stack technique",
+      "description": "Nous construisons à la fois des interfaces utilisateur intuitives et des backends robustes. Notre stack par défaut (mais pas exclusivement) est full TypeScript, des APIs backend (Node, NestJS) aux applications frontend (React, Angular, Next.js). Quels que soient vos besoins, nous livrons des systèmes de qualité production — rapides et sécurisés."
+    }
+  },
   "contentSection": {
     "title": "Ravis de vous rencontrer.",
     "and": "et",
