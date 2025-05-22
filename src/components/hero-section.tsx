@@ -5,6 +5,7 @@ import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
 import { useTranslation } from 'react-i18next'
 import { AuroraText } from '@/components/magicui/aurora-text'
+import { BrandLogo } from './brand-logo'
 
 export default function HeroSection() {
     const { t } = useTranslation()
@@ -46,7 +47,7 @@ export default function HeroSection() {
                             </div>
                             <img
                                 className="order-first ml-auto h-56 w-full object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-20 lg:-top-[312px] lg:order-last lg:h-max lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/abstract-bg.jpg?updatedAt=1745733473768"
+                                src="/abstract-bg.webp"
                                 alt="Abstract Object"
                                 height="4000"
                                 width="3000"
@@ -71,80 +72,64 @@ export default function HeroSection() {
                                     gap={112}>
                                     {/* Modèles & Frameworks */}
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="/pytorch-2.svg"
-                                            alt="PyTorch Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="pytorch"
+                                            height={40}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="/TensorFlow_Logo.svg"
-                                            alt="TensorFlow Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="tensorflow"
+                                            height={20}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="/Hugging_Face_logo.svg"
-                                            alt="Hugging Face Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="hugging-face"
+                                            height={35}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
 
                                     {/* RAG & LLM apps */}
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="/langchain-logo-brandlogos.net_dexzv4edm.svg"
-                                            alt="LangChain Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="langchain"
+                                            height={20}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="/N8n-logo-new.svg"
-                                            alt="N8n Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="n8n"
+                                            height={40}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://dbdb.io/media/logos/weaviate2023.svg"
-                                            alt="Weaviate Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="weaviate"
+                                            height={20}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://raw.githubusercontent.com/qdrant/qdrant/master/docs/logo.svg"
-                                            alt="Qdrant Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="qdrant"
+                                            height={25}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
 
                                     {/* Fine-tuning & Hosting */}
                                     
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="/replicate-brand.svg"
-                                            alt="Replicate Logo"
-                                            height="20"
-                                            width="auto"
+                                        <BrandLogo 
+                                            brand="replicate"
+                                            height={20}
+                                            className="mx-auto h-5 w-fit"
                                         />
                                     </div>
 
