@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Layers, Settings2, Sparkles, Waves, Zap } from 'lucide-react'
+import { Layers, Sparkles, Waves } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 
