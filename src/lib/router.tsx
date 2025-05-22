@@ -15,7 +15,7 @@ const indexRoute = createRoute({
 const routeTree = rootRoute.addChildren([indexRoute])
 
 // Base path pour GitHub Pages
-const basePath = import.meta.env.DEV ? '/' : '/completium-landing/'
+const basePath = import.meta.env.DEV ? '/' : '/'
 
 // Créez le router avec la configuration pour GitHub Pages
 const router = createRouter({ 

@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 const distDir = path.resolve('./dist');
-const basePath = '/completium-landing';
+const basePath = '/';
 
 function checkHtmlFiles(directory) {
   const files = fs.readdirSync(directory);

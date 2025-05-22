@@ -1,5 +1,5 @@
 // Définition du chemin de base pour les ressources statiques en fonction de l'environnement
-export const BASE_PATH = import.meta.env.DEV ? '' : '/completium-landing'
+export const BASE_PATH = import.meta.env.DEV ? '' : '/'
 
 // Fonction utilitaire pour construire des URLs avec le bon préfixe
 export function getAssetPath(path: string): string {
