@@ -6,7 +6,16 @@ import { defineConfig } from "vite"
 // https://vite.dev/config/
 export default defineConfig({
   base: '/completium-landing/',
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(), 
+    tailwindcss(),
+    {
+      name: 'html-transform',
+      transformIndexHtml(html) {
+        return html.replace(/%BASE_URL%/g, '/completium-landing');
+      }
+    }
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

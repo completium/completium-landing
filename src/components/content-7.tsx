@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { useTranslation } from 'react-i18next'
+import { Image } from '@/components/ui/image'
 
 export default function ContentSection() {
     const { t } = useTranslation()
@@ -29,7 +30,7 @@ export default function ContentSection() {
                     </div>
                     <div className="relative sm:absolute sm:right-6 sm:-top-[-20px] sm:w-1/3 lg:w-1/4">
                         <div className="aspect-67/34 relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
-                            <img 
+                            <Image 
                                 src="/br_gd.png" 
                                 className="rounded-[15px] transform scaleX(-1) w-full max-w-[300px] mx-auto" 
                                 style={{ transform: 'scaleX(-1)' }} 

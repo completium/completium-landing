@@ -6,6 +6,7 @@ import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-b
 import { useTranslation } from 'react-i18next'
 import { AuroraText } from '@/components/magicui/aurora-text'
 import { BrandLogo } from './brand-logo'
+import { Image } from '@/components/ui/image'
 
 export default function HeroSection() {
     const { t } = useTranslation()
@@ -45,7 +46,7 @@ export default function HeroSection() {
                                     </Button> */}
                                 </div>
                             </div>
-                            <img
+                            <Image
                                 className="order-first ml-auto h-56 w-full object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-20 lg:-top-[312px] lg:order-last lg:h-max lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 src="/abstract-bg.webp"
                                 alt="Abstract Object"

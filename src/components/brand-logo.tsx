@@ -1,4 +1,5 @@
 import { useTheme } from "./theme-provider";
+import { Image } from "@/components/ui/image";
 
 // Type union pour toutes les marques disponibles
 export type Brand = 
@@ -71,7 +72,7 @@ export function BrandLogo({ brand, height = 20, className = "", url }: BrandLogo
       className={`inline-flex items-center justify-center w-full ${className}`}
       {...linkProps}
     >
-      <img
+      <Image
         src={logoPath}
         alt={`${brand} Logo`}
         className={`h-full w-auto mx-auto`}
