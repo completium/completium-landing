@@ -14,8 +14,15 @@ const indexRoute = createRoute({
 // Définissez vos routes ici
 const routeTree = rootRoute.addChildren([indexRoute])
 
-// Créez le router
-const router = createRouter({ routeTree })
+// Base path pour GitHub Pages
+const basePath = import.meta.env.DEV ? '/' : '/completium-landing/'
+
+// Créez le router avec la configuration pour GitHub Pages
+const router = createRouter({ 
+  routeTree,
+  basepath: basePath, 
+  defaultPreload: 'intent'
+})
 
 // Typez le router pour TypeScript
 declare module '@tanstack/react-router' {
