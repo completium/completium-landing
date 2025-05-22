@@ -5,14 +5,14 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/completium-landing/',
+  base: '/',
   plugins: [
     react(), 
     tailwindcss(),
     {
       name: 'html-transform',
       transformIndexHtml(html) {
-        return html.replace(/%BASE_URL%/g, '/completium-landing');
+        return html.replace(/%BASE_URL%/g, '/');
       }
     }
   ],
