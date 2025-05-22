@@ -1,4 +1,3 @@
-import { Link } from '@tanstack/react-router'
 import { HeroHeader } from './header'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
@@ -29,11 +28,11 @@ export default function HeroSection() {
                                 <p className="mt-8 max-w-2xl text-pretty text-lg"><span className="font-inter uppercase">Completium</span> {t('heroSection.description')}</p>
 
                                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Link to="/" className="no-underline">
+                                    <a href="mailto:contact@completium.com" className="no-underline">
                                         <InteractiveHoverButton className="text-base font-semibold">
                                             {t('heroSection.cta')}
                                         </InteractiveHoverButton>
-                                    </Link>
+                                    </a>
                                     {/* <Button
                                         key={2}
                                         asChild

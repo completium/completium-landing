@@ -5,6 +5,14 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import frTranslation from '../locales/fr/translation.json';
 import enTranslation from '../locales/en/translation.json';
 
+// Options pour le détecteur de langue
+const languageDetectorOptions = {
+  // Ordre des détections à utiliser
+  order: ['navigator'],
+  // Ne détecte que les langues prises en charge (fr, en)
+  checkWhitelist: true
+};
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -17,8 +25,13 @@ i18n
         translation: enTranslation
       }
     },
-    fallbackLng: 'fr',
+    fallbackLng: 'en', // Langue par défaut si aucune correspondance
+    supportedLngs: ['fr', 'en'], // Langues supportées
+    detection: languageDetectorOptions,
     debug: import.meta.env.DEV,
+    
+    // Utiliser un adaptateur pour transformer 'fr-FR', 'fr-CA', etc. en 'fr'
+    load: 'languageOnly',
     
     interpolation: {
       escapeValue: false,

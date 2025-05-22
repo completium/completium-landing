@@ -1,6 +1,7 @@
 import { Logo } from './logo'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
+import { Link } from '@tanstack/react-router'
 
 export default function FooterSection() {
     const { t } = useTranslation()
@@ -61,21 +62,21 @@ export default function FooterSection() {
     return (
         <footer className="py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
-                <a
-                    href="/"
+                <Link
+                    to="/"
                     aria-label="go home"
                     className="mx-auto block size-fit">
                     <Logo />
-                </a>
+                </Link>
 
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
                     {links.map((link, index) => (
-                        <a
+                        <Link
                             key={index}
-                            href={link.href}
+                            to={link.href}
                             className="text-muted-foreground hover:text-primary block duration-150">
                             <span>{link.title}</span>
-                        </a>
+                        </Link>
                     ))}
                 </div>
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
