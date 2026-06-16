@@ -81,7 +81,7 @@ export default function FooterSection() {
                 </div>
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
                     <a
-                        href="#"
+                        href="https://x.com/completium"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={t('footer.ariaTwitter')}

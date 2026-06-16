@@ -18,7 +18,7 @@
     "crystalCaption": "Completium Crystal"
   },
   "featuresSection": {
-    "title": "Made to cover your needs",
+    "title": "Ready to cover your needs",
     "description": "From AI consulting to full-stack development, we deliver robust, ready-to-integrate solutions tailored to your business.",
     "ai": {
       "title": "AI",
@@ -36,6 +36,56 @@
     "techStack": {
       "title": "Tech stack",
       "description": "We build both intuitive UIs and robust backends. Our default stack (not exclusively though) is full TypeScript, from backend APIs (Node, NestJS) to frontend apps (React, Angular, Next.js). Whatever your needs, we deliver production-grade systems — fast and secure."
+    }
+  },
+  "legacySection": {
+    "title": "Legacy projects",
+    "description": "Foundational products we built before Completium — still shaping how we design and ship software today.",
+    "carousel": {
+      "maximize": "View screenshot in full screen",
+      "close": "Close full screen view",
+      "previous": "Previous screenshot",
+      "next": "Next screenshot"
+    },
+    "edukera": {
+      "name": "Edukera",
+      "description": "Created in 2014, Edukera developed an online educational application to teach mathematics using the formal proof assistant Coq (developed by Inria). Since its commercial launch in 2016, the Edukera application has been used successfully in several universities by 8,500 students who have solved over half a million exercises.",
+      "link": "https://edukera.com/",
+      "cta": "Visit Edukera",
+      "screenshots": [
+        {
+          "src": "/legacy/edukera-1.png",
+          "alt": "Edukera exercise interface"
+        },
+        {
+          "src": "/legacy/edukera-2.png",
+          "alt": "Edukera course dashboard"
+        },
+        {
+          "src": "/legacy/edukera-3.png",
+          "alt": "Edukera proof assistant workspace"
+        }
+      ]
+    },
+    "archetype": {
+      "name": "Archetype",
+      "description": "Archetype is a general-purpose language to develop smart contracts on the Tezos blockchain, with exclusive features to ease development, testing, and formal verification. Designed for business logic clarity, it brings rational types, explicit execution conditions, and state machine patterns to on-chain applications.",
+      "link": "https://archetype-lang.org/",
+      "cta": "Visit Archetype",
+      "screenshots": [
+        {
+          "src": "/legacy/archetype-1.png",
+          "alt": "Archetype language documentation"
+        },
+        {
+          "src": "/legacy/archetype-2.png",
+          "alt": "Archetype smart contract editor"
+        },
+        {
+          "src": "/legacy/archetype-3.png",
+          "alt": "Archetype formal verification tools"
+        }
+      ]
     }
   },
   "contentSection": {

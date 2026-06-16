@@ -18,7 +18,7 @@
     "crystalCaption": "Cristal de Completium"
   },
   "featuresSection": {
-    "title": "Conçu pour répondre à vos besoins",
+    "title": "Prêts à répondre à vos besoins",
     "description": "Du conseil en IA au développement full-stack, nous livrons des solutions robustes et prêtes à intégrer, adaptées à votre entreprise.",
     "ai": {
       "title": "IA",
@@ -36,6 +36,56 @@
     "techStack": {
       "title": "Stack technique",
       "description": "Nous construisons à la fois des interfaces utilisateur intuitives et des backends robustes. Notre stack par défaut (mais pas exclusivement) est full TypeScript, des APIs backend (Node, NestJS) aux applications frontend (React, Angular, Next.js). Quels que soient vos besoins, nous livrons des systèmes de qualité production — rapides et sécurisés."
+    }
+  },
+  "legacySection": {
+    "title": "Projets historiques",
+    "description": "Des produits fondateurs que nous avons conçus avant Completium — ils continuent d'influencer notre façon de concevoir et livrer des logiciels.",
+    "carousel": {
+      "maximize": "Afficher la capture en plein écran",
+      "close": "Fermer la vue plein écran",
+      "previous": "Capture précédente",
+      "next": "Capture suivante"
+    },
+    "edukera": {
+      "name": "Edukera",
+      "description": "Créée en 2014, Edukera a développé une application éducative en ligne pour enseigner les mathématiques en s'appuyant sur l'assistant de preuve formelle Coq (développé par l'Inria). Depuis son lancement commercial en 2016, l'application Edukera a été utilisée avec succès dans plusieurs universités par 8 500 étudiants ayant résolu plus d'un demi-million d'exercices.",
+      "link": "https://edukera.com/",
+      "cta": "Visiter Edukera",
+      "screenshots": [
+        {
+          "src": "/legacy/edukera-1.png",
+          "alt": "Interface d'exercice Edukera"
+        },
+        {
+          "src": "/legacy/edukera-2.png",
+          "alt": "Tableau de bord de cours Edukera"
+        },
+        {
+          "src": "/legacy/edukera-3.png",
+          "alt": "Espace de travail avec assistant de preuve Edukera"
+        }
+      ]
+    },
+    "archetype": {
+      "name": "Archetype",
+      "description": "Archetype est un langage généraliste pour développer des smart contracts sur la blockchain Tezos, avec des fonctionnalités exclusives pour faciliter le développement, les tests et la vérification formelle. Conçu pour une logique métier lisible, il apporte des types rationnels, des conditions d'exécution explicites et des modèles de machine à états aux applications on-chain.",
+      "link": "https://archetype-lang.org/",
+      "cta": "Visiter Archetype",
+      "screenshots": [
+        {
+          "src": "/legacy/archetype-1.png",
+          "alt": "Documentation du langage Archetype"
+        },
+        {
+          "src": "/legacy/archetype-2.png",
+          "alt": "Éditeur de smart contract Archetype"
+        },
+        {
+          "src": "/legacy/archetype-3.png",
+          "alt": "Outils de vérification formelle Archetype"
+        }
+      ]
     }
   },
   "contentSection": {
